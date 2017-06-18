@@ -1,8 +1,10 @@
 import * as React from 'react';
-import { Text, View, TouchableHighlight } from 'react-native';
+import {  View } from 'react-native';
+import { Button } from 'react-native-elements';
 
 interface Props {
   text: string;
+  iconName: string;
   onPress: Function;
 }
 
@@ -14,11 +16,16 @@ export default class CounterButton extends React.Component<Props, {}> {
   render() {
     return (
       <View>
-        <TouchableHighlight onPress={() => this.props.onPress()}>
-          <Text>
-            {this.props.text}
-          </Text>
-        </TouchableHighlight>
+        <Button 
+          onPress={() => this.props.onPress()}
+          raised
+          icon={{name: this.props.iconName, size: 32, type: 'font-awesome'}}
+          buttonStyle={{backgroundColor: 'blue', borderRadius: 15}}
+          textStyle={{textAlign: 'center'}}
+          title={this.props.text}
+          containerViewStyle={{margin: 5}}
+          >
+        </Button>
       </View>
     );
   }

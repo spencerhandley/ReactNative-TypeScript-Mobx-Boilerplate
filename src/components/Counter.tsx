@@ -14,21 +14,18 @@ interface Props extends StoresForComponent {}
 @inject((stores: Stores): Props => ({ counterStore: stores.counterStore }))
 @observer
 export default class Counter extends React.Component<Props, {}> {
-  componentWillReact() {
-    console.log('I will re-render, since the todo has changed!');
-  }
-
   render() {
     const { counterStore } = this.props;
-    console.log(counterStore);
     return (
       <View>
         <Text>The count is currently: {counterStore!.count}</Text>
         <CounterButton
+          iconName="plus"
           text="Increment"
           onPress={counterStore!.increment}
         />
         <CounterButton
+          iconName="minus"
           text="Decrement"
           onPress={counterStore!.decrement}
         />

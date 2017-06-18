@@ -11,7 +11,9 @@
 		"mobx": "^3.1.15",
 		"mobx-react": "^4.2.1",
 		"react": "16.0.0-alpha.12",
-		"react-native": "^0.45.1"
+		"react-native": "^0.45.1",
+		"react-native-elements": "^0.13.0",
+		"react-native-vector-icons": "4.1.1"
 	},
 	"devDependencies": {
 		"@types/enzyme": "^2.8.0",
@@ -41,7 +43,7 @@
 			"^.+\\.(js)$": "<rootDir>/node_modules/babel-jest",
 			"\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
 		},
-		"testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+		"testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx)$",
 		"testPathIgnorePatterns": [
 			"\\.snap$",
 			"<rootDir>/node_modules/",
