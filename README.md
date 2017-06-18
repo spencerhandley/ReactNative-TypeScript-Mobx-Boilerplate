@@ -1,4 +1,10 @@
-# React Native - Typescript - Mobx - Jest
+### Features
+- [x] React Native
+- [x] Typescript
+- [x] Mobx + Mobx React
+- [x] Jest (w/ cli repl/debugger)
+- [x] React Native Elements
+
 
 ### Installation
 
@@ -37,5 +43,7 @@ or in watch mode with
     // project root dir
     yarn test:debug
 ```
+
+You will hit your breakpoints after a brief period of time. Press c to continue the debugger. Type 'repl' when at a breakpoint in order to access variables at your breakpoint.
 
 
