@@ -29,7 +29,7 @@ then
 or in watch mode with
 ```javascript
     // project root dir
-    yarn test -- --watch
+    yarn test:watch
 ```
 
 ### Debugging tests
