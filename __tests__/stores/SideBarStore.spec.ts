@@ -9,8 +9,8 @@ test('initialzes to closed', () => {
 test('toggles isOpen', () => {
     let store = new SideBarStore();
     
-    store.toggleSideMenu();
+    store.openSideMenu();
     expect(store.isOpen).toBeTruthy();
-    store.toggleSideMenu();
+    store.closeSideMenu();
     expect(store.isOpen).toBeFalsy();
 });

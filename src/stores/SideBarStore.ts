@@ -8,7 +8,12 @@ export default class SideBarStore {
   }
 
   @action
-  toggleSideMenu(): void {
-    this.isOpen = !this.isOpen;
+  openSideMenu(): void {
+    this.isOpen = true;
+  }
+
+  @action
+  closeSideMenu(): void {
+    this.isOpen = false;
   }
 }

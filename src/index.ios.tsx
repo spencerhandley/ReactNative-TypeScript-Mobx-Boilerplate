@@ -5,18 +5,41 @@ import { SideMenu } from 'react-native-elements';
 import MenuComponent from './components/MenuComponent';
 import createMobxStores from './helpers/createMobxStores';
 import Router from './Router';
+
 interface Props {}
 
-interface State {}
+interface State {
+  isOpen: boolean;
+}
 
 const stores = createMobxStores();
 
 @observer
 export default class RnTsMobxBoiler extends React.Component<Props, State> {
+  constructor(props: Props, context: any) {
+    super(props, context);
+
+    this.state = {
+      isOpen: false
+    };
+  }
+
+  handleSideBarChange(isOpen: boolean): void {
+    if (isOpen) {
+      stores.sidebarStore.openSideMenu();
+    } else {
+      stores.sidebarStore.closeSideMenu();
+    }
+  }
+
   render() {
     return (
       <Provider {...stores}>
-        <SideMenu isOpen={stores.sidebarStore.isOpen} menu={MenuComponent}>
+        <SideMenu
+          onChange={(isOpen: boolean) => this.handleSideBarChange(isOpen)}
+          isOpen={stores.sidebarStore.isOpen}
+          menu={MenuComponent}
+        >
           <Router />
         </SideMenu>
       </Provider>

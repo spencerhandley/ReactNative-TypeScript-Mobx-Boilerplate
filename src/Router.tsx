@@ -20,7 +20,7 @@ export default class RouterComponent extends React.Component<Props, {}> {
       <Router sceneStyle={{ paddingTop: 65 }}>
         <Scene
           leftTitle="SideBar"
-          onLeft={() => this.props.sidebarStore!.toggleSideMenu()}
+          onLeft={() => this.props.sidebarStore!.openSideMenu()}
           key="home"
         >
           <Scene key="counter" component={Counter} title="Counter" />

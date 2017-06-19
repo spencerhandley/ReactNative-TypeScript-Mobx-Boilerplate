@@ -31,11 +31,13 @@ export default class Counter extends React.Component<Props, {}> {
             iconName="plus"
             text="Increment"
             onPress={counterStore!.increment}
+            backgroundColor="green"
           />
           <CounterButton
             iconName="minus"
             text="Decrement"
             onPress={counterStore!.decrement}
+            backgroundColor="red"
           />
         </Card>
       </View>
