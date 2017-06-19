@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
+import { View, Text } from 'react-native';
 import { inject, observer } from 'mobx-react';
 import { Stores } from '../stores/types';
+import { Card } from 'react-native-elements';
 import CounterStore from '../stores/CounterStore';
 import CounterButton from './CounterButton';
 
@@ -18,17 +19,21 @@ export default class Counter extends React.Component<Props, {}> {
     const { counterStore } = this.props;
     return (
       <View>
-        <Text>The count is currently: {counterStore!.count}</Text>
-        <CounterButton
-          iconName="plus"
-          text="Increment"
-          onPress={counterStore!.increment}
-        />
-        <CounterButton
-          iconName="minus"
-          text="Decrement"
-          onPress={counterStore!.decrement}
-        />
+        <Card>
+          <Text style={{textAlign: 'center'}}>
+            The count is currently: {counterStore!.count}
+          </Text>
+          <CounterButton
+            iconName="plus"
+            text="Increment"
+            onPress={counterStore!.increment}
+          />
+          <CounterButton
+            iconName="minus"
+            text="Decrement"
+            onPress={counterStore!.decrement}
+          />
+        </Card>
       </View>
     );
   }
