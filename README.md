@@ -2,6 +2,7 @@
 - [x] React Native
 - [x] Typescript
 - [x] Mobx + Mobx React
+- [x] React-Native-Router-Flux
 - [x] Jest (w/ cli repl/debugger)
 - [x] React Native Elements
 

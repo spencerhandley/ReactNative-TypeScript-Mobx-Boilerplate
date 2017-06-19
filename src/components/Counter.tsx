@@ -10,17 +10,21 @@ interface StoresForComponent {
   counterStore?: CounterStore;
 }
 
-interface Props extends StoresForComponent {}
+export interface Props extends StoresForComponent {}
 
 @inject((stores: Stores): Props => ({ counterStore: stores.counterStore }))
 @observer
 export default class Counter extends React.Component<Props, {}> {
+  constructor(props: Props, context: any) {
+    super(props, context);
+  }
+
   render() {
     const { counterStore } = this.props;
     return (
       <View>
         <Card>
-          <Text style={{textAlign: 'center'}}>
+          <Text style={{ textAlign: 'center' }}>
             The count is currently: {counterStore!.count}
           </Text>
           <CounterButton

@@ -1,11 +1,14 @@
 import CounterStore from './counterStore';
+import SideBarStore from './SideBarStore';
 
-export type StoreName = 'counter';
+export type StoreName = 'counter' | 'sidebar';
 
 export const storeNames: StoreName[] = [
-    'counter'
+    'counter',
+    'sidebar'
 ];
 
 export interface Stores {
-    counterStore: CounterStore
+    counterStore: CounterStore,
+    sidebarStore: SideBarStore
 };
