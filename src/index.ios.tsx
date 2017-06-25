@@ -2,7 +2,7 @@ import * as React from 'react';
 import { AppRegistry } from 'react-native';
 import { observer, Provider } from 'mobx-react';
 import { SideMenu } from 'react-native-elements';
-import MenuComponent from './components/MenuComponent';
+import getMenuItems from './helpers/MenuItems';
 import createMobxStores from './helpers/createMobxStores';
 import Router from './Router';
 
@@ -38,7 +38,7 @@ export default class RnTsMobxBoiler extends React.Component<Props, State> {
         <SideMenu
           onChange={(isOpen: boolean) => this.handleSideBarChange(isOpen)}
           isOpen={stores.sidebarStore.isOpen}
-          menu={MenuComponent}
+          menu={getMenuItems()}
         >
           <Router />
         </SideMenu>
